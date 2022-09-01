@@ -11,7 +11,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
- <nav class="navbar navbar-expand-lg
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <nav class="navbar navbar-expand-lg
             navbar-light text-bg-info p-3">
         <img src="/static/images/logo.jpg" class="img-thumbnail" alt="Planview" id ="logo">
         <!-- hamburger button that toggles the navbar-->
@@ -100,40 +101,123 @@
                     </div>
                 </div>
             </div>
-                   <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">TEST SUITE NO</th>
-      <th scope="col">NO OF CASES</th>
-      <th scope="col">OWNER</th>
-      <th scope="col">STATUS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>FPD</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>ECS</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>DUMMY</td>
-      <td></td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+         <div class="table-responsive col-md-6" id="data">
+                      <table class="table table-responsive">
+                      <thead>
+                        <tr>
+                            <th scope="col">SL NO</th>
+                          <th scope="col">TEST SUITE NAME</th>
+                          <th scope="col">NO OF TESTS</th>
+                          <th scope="col">OWNER</th>
+                          <th scope="col">STATUS</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>FPD</td>
+                          <td>Chidu</td>
+                          <td>20</td>
+                          <td>FAIL</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Integ</td>
+                          <td>125</td>
+                          <td>Arvind</td>
+                            <td>PASS</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Tasktop</td>
+                          <td>200</td>
+                          <td>Admin</td>
+                            <td>PASS</td>
+                        </tr>
+                      <tr>
+                          <th scope="row">4</th>
+                          <td>ppmpro</td>
+                          <td>200</td>
+                          <td>Shalini</td>
+                            <td>PASS</td>
+                        </tr>
+                      <tr>
+                          <th scope="row">5</th>
+                          <td>FPD_IMPORT</td>
+                          <td>1200</td>
+                          <td>Prafful</td>
+                            <td>PASS</td>
+                        </tr>
+                      <tr>
+                          <th scope="row">6</th>
+                          <td>FPD_Export</td>
+                          <td>45</td>
+                          <td>Prafful</td>
+                            <td>PASS</td>
+                        </tr>
+                      <tr>
+                          <th scope="row">7</th>
+                          <td>RMA</td>
+                          <td>200</td>
+                          <td>Chiru</td>
+                            <td>FAIL</td>
+                        </tr>
+                      <tr>
+                          <th scope="row">8</th>
+                          <td>UI</td>
+                          <td>200</td>
+                          <td>Geetika</td>
+                            <td>PASS</td>
+                        </tr>
+                      <tr>
+                          <th scope="row">9</th>
+                          <td>API</td>
+                          <td>200</td>
+                          <td>Bhagya</td>
+                            <td>PASS</td>
+                        </tr>
 
+                      </tbody>
+                    </table>
+         </div>
+                   <div class="table-responsive col-md-6" id="data">
+       <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+        <script>
+                    var xValues = ["FPD", "Integ", "Tasktop", "ppmpro", "FPD_IMPORT","FPD_Export","RMA", "UI", "API"];
+                    var yValues = [55, 49, 44, 24, 15, 22, 33, 44, 56];
+                    var barColors = [
+                      "#b91d47",
+                      "#00aba9",
+                      "#2b5797",
+                      "#e8c3b9",
+                      "#1e7145",
+                        "#2b5797",
+                      "#e8c3b9",
+                      "#1e7145"
+                    ];
+
+                    new Chart("myChart", {
+                      type: "doughnut",
+                      data: {
+                        labels: xValues,
+                        datasets: [{
+                          backgroundColor: barColors,
+                          data: yValues
+                        }]
+                      },
+                      options: {
+                        title: {
+                          display: true,
+                          text: "World Wide Wine Production 2018"
+                        }
+                      }
+                    });
+        </script>
+                   </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
 
 
